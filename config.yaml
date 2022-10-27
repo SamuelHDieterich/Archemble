@@ -1,0 +1,132 @@
+users:
+  - user:
+    password: password
+    root_password: true
+    groups:
+      - video
+      - audio
+      - storage
+      - sudo
+
+
+timezone:
+  region: America
+  city: Sao_Paulo
+
+
+locales:
+  - en_US.UTF-8 UTF-8
+  - pt.BR.UTF-8 UTF-8
+
+lang: en_US.UTF-8
+
+keymap: br-abnt2
+
+
+hostname: arch
+
+
+partitions:
+  
+  - sda1:
+    name: BOOT
+    mountpoint: /boot
+    size: 1G
+    type: EFI system partition
+  
+  - sda2:
+    name: SWAP
+    size: 8G
+    type: Linux swap
+  
+  - sda3:
+    name: ROOT
+    mountpoint: /
+    type: Linux filesystem
+    format: btrfs
+    subvolumes:
+      - /
+      - /home
+      - /root
+      - /var/log
+      - /var/cache
+      - /.snapshots
+
+
+aur: yay
+
+
+packages:
+
+  # Base
+  - base
+  - base-devel
+  - sudo
+  - git
+
+  # Kernel
+  - linux
+  - linux-firmware
+  - linux-headers
+  - linux-docs
+
+  # Microcode
+  - amd-ucode
+  - intel-ucode
+
+  # Drivers
+  - xf86-video-intel
+  - xf86-video-amd
+  - nvidia
+  - mesa
+
+  # Video
+  - xorg
+  - wayland
+
+  # Bootloader
+  - grub
+  - grub-brtfs
+  - efibootmgr
+
+  # Filesystem
+  - brtfs-progs
+  - ntfs-3g
+
+  # Shell
+  - zsh
+  - fish
+
+  # Editors
+  - vim
+  - neovim
+  - code
+  - libreoffice
+
+  # Sound
+  - pipewire
+  - pipewire-pulse
+  - pipewire-jack
+  - pipewire-alsa
+
+  # Internet
+  - networkmanager
+  - dhcpcd
+  - wpa_supplicant
+
+  # Miscellaneous
+  - neofetch
+  - reflector
+  - cups
+  - curl
+  - wget
+  - man-db
+  - man-pages
+  - openssh
+
+
+services:
+
+  - cups
+  - sshd
+  - reflector 
