@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "archemble"
+version = "0.1.dev1"
+description = "Simplify the setup and maintenance of Arch Linux systems."
+authors = ["Samuel Huff Dieterich <samuel.dieterich@ufrgs.br>"]
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/SamuelHDieterich/Archemble"
+packages = [{include = "archemble", from = "src"}]
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+PyYAML = "^6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
